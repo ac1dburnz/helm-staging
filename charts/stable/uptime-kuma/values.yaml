@@ -1,7 +1,7 @@
 image:
   repository: louislam/uptime-kuma
   pullPolicy: IfNotPresent
-  tag: 1.23.6-debian@sha256:ee1841f70126912f67896225a6d78d1bbd35d0e40911dc80c4d7746788d2fab2
+  tag: 1.23.8-debian@sha256:7ada537987497ea658eb00d67a9c8187cf20e26eee03c70073129c409bbd42e1
 security:
   PUID: 0
 service:

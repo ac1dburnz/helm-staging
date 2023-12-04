@@ -1,7 +1,7 @@
 image:
   repository: lmscommunity/logitechmediaserver
   pullPolicy: IfNotPresent
-  tag: 8.4.0@sha256:d820d00b54b7ffda84b6c3d982dce9e3fe4052210f6c932ebc36688be5afddbc
+  tag: 8.4.0@sha256:e5451b1576702be7a3d4d308bba18a5932cdba9eae4b1bc3513d1e9b161921fe
 service:
   main:
     ports:

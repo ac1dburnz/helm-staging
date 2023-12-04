@@ -1,7 +1,7 @@
 image:
   repository: ghcr.io/linuxserver/beets
   pullPolicy: IfNotPresent
-  tag: version-1.6.0@sha256:2b96d836366de789be7f886d61839965f7cb3df22862c65589441d82a9bbcd2d
+  tag: version-1.6.0@sha256:3008a530acc6440f50885e8f1c32bc7e3324e369800bff63664f8dac7eb02120
 securityContext:
   container:
     readOnlyRootFilesystem: false

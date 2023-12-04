@@ -1,6 +1,6 @@
 image:
   repository: wekanteam/wekan
-  tag: v7.18@sha256:9047583130ec530f200a136f0a7309076a8ca5746f284f46affd636c7fb5f245
+  tag: v7.22@sha256:233161582522e7e779e17f513c779b50fb289e3ca3ad332482b96e29d1abe321
   pullPolicy: IfNotPresent
 service:
   main:

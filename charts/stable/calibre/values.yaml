@@ -1,6 +1,6 @@
 image:
   repository: ghcr.io/linuxserver/calibre
-  tag: 7.0.0@sha256:436931022d642d47c2f7e95d7fa6d3b3f4e1e40b57fcc1163f50a6c8ced11921
+  tag: 7.1.0@sha256:f15c4bceb66ab7554726ac50630ce8a6d04a50654cf2c4679db8c08cafe14ef4
   pullPolicy: IfNotPresent
 securityContext:
   container:
