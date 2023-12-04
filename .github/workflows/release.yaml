@@ -20,30 +20,8 @@ jobs:
 
     - name: Configure Git
       run: |
-name: "Charts: Release"
-
-concurrency: helm-release
-
-on:
-  workflow_dispatch:
-  push:
-    branches:
-      - main
-
-jobs:
-  release-charts:
-    runs-on: ubuntu-20.04
-    steps:
-    - name: Checkout
-      uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b # tag=v3
-      with:
-        token: ${{ secrets.BOT_TOKEN }}
-        fetch-depth: 0
-
-    - name: Configure Git
-      run: |
-        git config --global user.name "Your Name"
-        git config --global user.email "you@example.com"
+        git config user.name "TrueCharts-Bot"
+        git config user.email "bot@truecharts.org"
 
     - name: Install Helm
       uses: azure/setup-helm@5119fcb9089d432beecbf79bb2c7915207344b78 # tag=v3
@@ -74,31 +52,3 @@ jobs:
         CR_TOKEN: "${{ secrets.BOT_TOKEN }}"
         CR_SKIP_EXISTING: "true"
 
-    - name: Install Helm
-      uses: azure/setup-helm@5119fcb9089d432beecbf79bb2c7915207344b78 # tag=v3
-      with:
-        version: v3.5.4
-
-    # Optional step if GPG signing is used
-    - name: Prepare GPG key
-      run: |
-        gpg_dir=.cr-gpg
-        mkdir "$gpg_dir"
-        keyring="$gpg_dir/secring.gpg"
-        base64 -d <<< "$GPG_KEYRING_BASE64" > "$keyring"
-        passphrase_file="$gpg_dir/passphrase"
-        echo "$GPG_PASSPHRASE" > "$passphrase_file"
-        echo "CR_PASSPHRASE_FILE=$passphrase_file" >> "$GITHUB_ENV"
-        echo "CR_KEYRING=$keyring" >> "$GITHUB_ENV"
-      env:
-        GPG_KEYRING_BASE64: "${{ secrets.GPG_KEYRING_BASE64 }}"
-        GPG_PASSPHRASE: "${{ secrets.GPG_PASSPHRASE }}"
-
-    - name: Run chart-releaser
-      uses: helm/chart-releaser-action@v1.6.0
-      with:
-        charts_dir: charts/*
-        config: cr.yaml
-      env:
-        CR_TOKEN: "${{ secrets.BOT_TOKEN }}"
-        CR_SKIP_EXISTING: "true"
